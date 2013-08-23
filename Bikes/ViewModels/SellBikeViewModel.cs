@@ -16,7 +16,7 @@ namespace Bikes.ViewModels
         public string Email { get; set; }
         public List<string> State { get; set; }
         public List<string> City { get; set; }
-        public string Area { get; set; }
+        public string Place { get; set; }
         public int Phone { get; set; }
         [DisplayName("Brand")]
         public string BrandName { get; set; }

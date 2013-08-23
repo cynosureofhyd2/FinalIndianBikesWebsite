@@ -317,9 +317,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\AnotherView.cshtml" />
     <Content Include="Views\Home\Dropdown.cshtml" />
-    <Content Include="Views\Home\Edit.cshtml" />
     <Content Include="Views\Home\Final.cshtml" />
-    <Content Include="Views\Bikes\Sell.cshtml" />
+    <Content Include="Views\Bikes\SellPersonInfo.cshtml" />
     <Content Include="Views\Inspire\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

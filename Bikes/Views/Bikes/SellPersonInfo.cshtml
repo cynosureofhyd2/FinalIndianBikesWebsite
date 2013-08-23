@@ -125,6 +125,24 @@
                 border:#d8e5e8;
                 margin:40px auto;
             }
+            legend
+            {
+                text-align: center;
+                font-size:larger;
+                margin-top:30px;
+            }
+
+            .text-box
+            {
+                align-content:center;
+                align-items:center;
+            }
+            form
+            {
+                width: 800px; 
+                margin: 0 auto; 
+                background: #ccc;
+            }
         </style>
 		<div id="container">
 			<header class="header" role="banner">
@@ -174,114 +192,116 @@
 				</div>
 			</div>
   		</div>
-              <div id="images">
+         <div id="images">
               </div>
         <div id="content">
+            <div class="row">
         <!--Form Information -->
          @using (Html.BeginForm()) {
          @Html.AntiForgeryToken()
          @Html.ValidationSummary(true)
 
-    <fieldset class="form-division">
-        <legend>Sell Bikes</legend>
+            <fieldset class="form-division">
+                <legend>Sell Bikes</legend>
 
-        <div class="editor-label .row .twelve">
-            @Html.LabelFor(model => model.Name)
-        </div>
-        <div class="editor-field .row .twelve">
-            @Html.EditorFor(model => model.Name)
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.State)
-            @Html.ValidationMessageFor(model => model.Name)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Email)
-            @Html.ValidationMessageFor(model => model.Email)
-        </div>
+                <div class="editor-label .row .twelve">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field .row .twelve">
+                    @Html.EditorFor(model => model.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.State)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Area)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Area)
-            @Html.ValidationMessageFor(model => model.Area)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Place)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Place)
+                    @Html.ValidationMessageFor(model => model.Place)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Phone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Phone)
-            @Html.ValidationMessageFor(model => model.Phone)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Phone)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Phone)
+                    @Html.ValidationMessageFor(model => model.Phone)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BrandName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.BrandName)
-            @Html.ValidationMessageFor(model => model.BrandName)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BrandName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.BrandName)
+                    @Html.ValidationMessageFor(model => model.BrandName)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.BikeModel)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.BikeModel)
-            @Html.ValidationMessageFor(model => model.BikeModel)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.BikeModel)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.BikeModel)
+                    @Html.ValidationMessageFor(model => model.BikeModel)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Variant)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Variant)
-            @Html.ValidationMessageFor(model => model.Variant)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Variant)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Variant)
+                    @Html.ValidationMessageFor(model => model.Variant)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.YearMade)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.YearMade)
-            @Html.ValidationMessageFor(model => model.YearMade)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.YearMade)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.YearMade)
+                    @Html.ValidationMessageFor(model => model.YearMade)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.MonthMade)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.MonthMade)
-            @Html.ValidationMessageFor(model => model.MonthMade)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.MonthMade)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.MonthMade)
+                    @Html.ValidationMessageFor(model => model.MonthMade)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.KMDriven)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.KMDriven)
-            @Html.ValidationMessageFor(model => model.KMDriven)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.KMDriven)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.KMDriven)
+                    @Html.ValidationMessageFor(model => model.KMDriven)
+                </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Color)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Color)
-            @Html.ValidationMessageFor(model => model.Color)
-        </div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Color)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Color)
+                    @Html.ValidationMessageFor(model => model.Color)
+                </div>
 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+                <p>
+                    <input type="submit" value="Create" />
+                </p>
+            </fieldset>
              
-}
+        }
+                </div>
             </div>
 
 

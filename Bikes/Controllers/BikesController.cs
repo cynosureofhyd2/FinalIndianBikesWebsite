@@ -13,7 +13,7 @@ namespace Bikes.Controllers
         //
         // GET: /Bikes/
         [HttpGet]
-        public ActionResult Sell()
+        public ActionResult SellPersonInfo()
         {
             SellBikeViewModel sellBikeEntity = new SellBikeViewModel();
 
