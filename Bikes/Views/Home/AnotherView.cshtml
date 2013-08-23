@@ -1,0 +1,267 @@
+﻿@{
+    ViewBag.Title = "View";
+}
+<!doctype html>  
+
+<!--[if lt IE 7]><html dir="ltr" lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html dir="ltr" lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html dir="ltr" lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html dir="ltr" lang="en-US" class="no-js"><!--<![endif]-->
+	
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- Google Chrome Frame for IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- mobile meta (hooray!) -->
+		<!-- <meta name="HandheldFriendly" content="True"> -->
+		<!-- <meta name="MobileOptimized" content="320"> -->
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
+		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
+		<link rel="shortcut icon" href="http://soworldwide.org/wp-content/themes/soww_theme/favicon.ico" />
+		<!-- wordpress head functions -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+			<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic" rel="stylesheet" type="text/css">
+		<![endif]-->
+		<link rel="alternate" type="application/rss+xml" title="Serving Orphans Worldwide &raquo; />
+        <link rel="alternate" type="application/rss+xml" title="Serving Orphans Worldwide &raquo; Comments Feed" />
+        <link rel="alternate" type="application/rss+xml" title="Serving Orphans Worldwide &raquo; Home Comments Feed" />
+        <link href="~/Content/wpinstagram.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="~/Content/barebones.css" rel="stylesheet" type="text/css"  media="all"/>
+        <link href="~/Content/jQueryFancybox.css" rel="stylesheet" type="text/css" media="all"/>
+        @*<link rel='stylesheet' id='wpinstagram-css'  href='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/wpinstagram.css?ver=0.3.5' type='text/css' media='all' />
+        <link rel='stylesheet' id='fancybox-css-css'  href='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/fancybox/jquery.fancybox-1.3.4.min.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='bones-stylesheet-css'  href='http://soworldwide.org/wp-content/themes/soww_theme/library/css/style.css?ver=3.4.1' type='text/css' media='all' />*@
+        <style type="text/css">
+                     
+        </style>
+<!--[if lte IE 9]>
+<link rel='stylesheet' id='bones-ie-only-css'  href='' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=1.7.2'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/jquery.easing-1.3.pack.js'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/jquery.cycle.lite-1.5.min.js'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/jquery.fancybox-1.3.4.pack.js'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/jquery.mousewheel-3.0.4.pack.js'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-includes/js/comment-reply.js?ver=3.4.1'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/themes/soww_theme/library/js/libs/modernizr.custom.min.js?ver=2.5.3'></script>
+<link rel='canonical' href='http://soworldwide.org/' />
+		<!-- end of wordpress head -->
+		<!-- end analytics -->
+	</head>
+	<body class="home page page-id-4 page-template-default">
+	<div id="fb-root"></div>
+	<script>
+	    $(document).ready(function () {
+	    });
+	    (function (d, s, id) {
+	      var js, fjs = d.getElementsByTagName(s)[0];
+	      if (d.getElementById(id)) return;
+	      js = d.createElement(s); js.id = id;
+	      //js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=206392089402409";
+	      fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+		<div id="container">
+			<header class="header" role="banner">
+				<div id="inner-header" class="wrap clearfix">
+					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
+					<!-- <p id="logo" class="h1"><a href="http://soworldwide.org" rel="nofollow">Serving Orphans Worldwide</a></p> -->
+					<!-- if you'd like to use the site description you can un-comment it below -->		
+                    <nav role="navigation">
+						@*<ul id="menu-top-left-nav" class="nav floatleft">*@
+                        <ul id="current" class="nav floatleft">
+                            <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4 current_page_item menu-item-32">
+                                <a href="/">Sell Bikes</a>
+                                <ul>
+                                    <li>
+                                        <a href="">Test</a>
+                                        <ul>
+                                            <li>
+                                                <a href="\">
+                                                    Another Test
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                           
+                            <li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14">
+                                <a href="/Bikes/Sell">Buy Bikes</a>
+                            </li>
+                            <li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12">
+                                <a href="">Vote on bikes</a>
+                            </li>
+                        </ul>		
+                        <ul id="menu-top-right-nav" class="nav floatright">
+                            <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29">
+                            <a href="">Sell Cars</a>
+                            </li>
+                            <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27">
+                                <a href="">Buy Cars</a>
+                            </li>
+                            <li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28">
+                                <a href="">Vote on Cars</a>
+                            </li>
+                        </ul>						
+					</nav>
+				</div> <!-- end #inner-header -->
+			</header> <!-- end header -->
+			<div id="contact_drawer">
+				<div class="wrap clearfix">
+					<h1 class="bold">We'd love to hear from you.</h1>
+					<p><b></b><br/>
+					<p>general inquiries:<br/>
+					<a href="mailto">info@myown.org</a></p>
+				</div>
+			</div>
+
+            <div class="home-header-wrap clearfix">
+				<div class="next-prev-butts" id="home-next-butt"><a href="" class=""></a><div id="arrow-up"></div></div>
+				<div class="next-prev-butts" id="home-prev-butt"><a href="" class=""></a><div id="arrow-down"></div></div>
+				<div>
+                    <div class="home-header home-slide-out" style="background-image: url(@Url.Content("~/Content/PulsarHighQuality.jpg")); background-position: 50% -75px;">
+						<div class="wrap">
+							<h1 class="home-page-headline sixcol first text-huge extra-bold serif italic white-text"><a href="http://soworldwide.org/prayer-partner/">Rate your Bike<span class="learn-more">+ Learn More</span></a></h1>
+						</div>
+					</div>
+                    <div class="home-header slide-trans home-slide-visible current-slide" style="background-image: url(@Url.Content("~/Content/01-skoda-superb.jpg")); background-position: 50% -75px;">
+						<div class="wrap">
+							<h1 class="home-page-headline sixcol first text-huge extra-bold serif italic white-text page-headline-show"><a href="http://soworldwide.org/at-the-start-of-possible/">Rate your Car<span class="learn-more">+ Learn More</span></a></h1>
+						</div>
+					</div>
+					<div class="home-header home-slide-in" style="background-image: url(@Url.Content("~/Content/pulsar.jpg")); background-position: 50% -75px;">
+						<div class="wrap">
+							<h1 class="home-page-headline sixcol first text-huge extra-bold serif italic white-text"><a href="http://soworldwide.org/new-t-shirts/">Buy or Sell your Vehicle<span class="learn-more">+ Learn More</span></a></h1>
+						</div>
+					</div>
+								@*<div class="home-header limbo" style="background-image: url(@Url.Content("~/Content/usairways_logo.png")); background-position: 50% -75px;">
+						<div class="wrap">
+							<h1 class="home-page-headline sixcol first text-huge extra-bold serif italic white-text"><a href="http://soworldwide.org/serving-orphans-sundays/">Serving Orphans Sundays<span class="learn-more">+ Learn More</span></a></h1>
+						</div>
+					</div>*@
+							</div>
+				<div class="home-social">
+					@*<div class="fb-like fb_edge_widget_with_comment fb_iframe_widget" data-href="https://www.facebook.com/soworldwide" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" fb-xfbml-state="rendered"><span style="height: 20px; width: 74px;"><iframe id="f2d6becae4" name="f12704ed5" scrolling="no" style="border: none; overflow: hidden; height: 20px; width: 74px;" title="Like this content on Facebook." class="fb_ltr" src="http://www.facebook.com/plugins/like.php?api_key=206392089402409&amp;locale=en_US&amp;sdk=joey&amp;channel_url=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D19%23cb%3Df145647c3c%26origin%3Dhttp%253A%252F%252Flocalhost%253A15543%252Ff4fe92fa4%26domain%3Dlocalhost%26relation%3Dparent.parent&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsoworldwide&amp;node_type=link&amp;width=100&amp;layout=button_count&amp;colorscheme=light&amp;show_faces=false&amp;send=false&amp;extended_social_context=false"></iframe></span></div>*@
+					@*<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1363148939.html#_=1363916063691&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Flocalhost%3A15543%2FInspire&amp;related=servingorphans&amp;size=m&amp;text=Possible%20starts%20now%20for%20orphans%20in%20need%20all%20over%20the%20world.%20&amp;url=http%3A%2F%2Fsoworldwide.org" class="twitter-share-button twitter-count-horizontal" style="width: 110px; height: 20px;" title="Twitter Tweet Button" data-twttr-rendered="true"></iframe>*@
+                    <script>
+                        !function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); }
+                        }(document, "script", "twitter-wjs");
+                    </script>
+				</div>
+			</div>
+
+
+
+  		</div>
+              <div id="images">
+              </div>
+            <div id="involved" class="text-center">
+				<div class="wrap clearfix">
+					@*<div class="fourcol first pad-30">
+						<div class="involved-icon" style="background-image:url(Content/newcar.jpg);"></div>
+						<h3 class="serif light bigtext">Sell your Bike</h3>
+						<p>Find it easier to sell your bike.<br><br></p>
+						<a class="uc" href="/get-involved/adopt-an-orphanage">New Car/Bike</a>
+					</div>*@
+					<div class="fourcol pad-30">
+					@*	<div class="involved-icon" style="background-image:url(http://soworldwide.org/wp-content/themes/soww_theme/library/images/campaign.png);"></div>*@
+						<h3 class="serif light bigtext">Sell your bike</h3>
+						<p>Invite your friends and neighbors to join the fight for orphans.</p>
+						<a class="uc" href="/get-involved/run-a-campaign">Sell Bike</a>
+					</div>
+					<div class="fourcol pad-30">
+						@*<div class="involved-icon" style="background-image:url(http://soworldwide.org/wp-content/themes/soww_theme/library/images/visit.png);"></div>*@
+						<h3 class="serif light bigtext">Buy a bike</h3>
+						<p>Go beyond and experience.<br><br></p>
+						<a class="uc" href="/get-involved/visit-an-orphanage">Sell Car</a>
+					</div>
+				</div>
+                	
+				</div>
+			@*<div id="home-content">
+				<div class="wrap clearfix">
+					<p class="fourcol first">
+                        At Our Website we give primary importance to User Experience 
+					</p>
+					<div class="eightcol last" id="subhead"></div>
+				</div>
+				<div id="home-content-fake"></div>
+			</div>*@
+		 <!-- end #content -->
+			<footer class="footer" id="main-footer" role="contentinfo">
+				<div id="inner-footer" class="wrap clearfix">
+					<nav role="navigation">
+    					<ul id="menu-footer-nav" class="nav footer-nav clearfix"><li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="http://soworldwide.org/">Home</a></li>
+                            <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="/">About</a>
+                                    <ul>
+                                    <li><a href="">Test</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-38"><a href="/">Feedback</a></li>
+                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="/">Get Involved</a></li>
+                            <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="/">Media</a></li>
+                            <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="/">Contact</a></li>
+                            </ul>	                
+					</nav>
+	                <p class="eightcol first mediumtext"><span class='h2 italic extra-bold serif'>Got Suggestions ? Tell Us</span>
+                         Please tell us how you would like to improve the website.</p>
+					@*<ul class="twocol arrowlist">
+						<li><a href="/"></a>Get Involved</li>
+					</ul>
+					<ul class="twocol last arrowlist">
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="" target="_blank">Twitter</a></li>
+						<li><a href="">Facebook</a></li>
+					</ul>*@
+				</div> <!-- end #inner-footer -->
+				<div id="badge">
+					@*<div class="fb-like" data-href="https://www.facebook.com/soworldwide" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+					*@<a href="http://whiteboard.is/?ref=soww" target="_blank">
+				</div>
+			</footer> <!-- end footer -->
+		</div> <!-- end #container -->
+		<script>
+	    jQuery(document).ready(function($) {
+		    $("ul.wpinstagram").find("a").fancybox({
+			    "transitionIn":			"elastic",
+			    "transitionOut":		"elastic",
+			    "easingIn":				"easeOutBack",
+			    "easingOut":			"easeInBack",
+			    "titlePosition":		"over",
+			    "padding":				0,
+			    "hideOnContentClick":	"true"
+		    });
+		    $.getJSON("http://api.flickr.com/services/feeds/groups_pool.gne?id=991276@N22âŒ©=en-us&amp;format=json&amp;jsoncallback=?", displayImages);
+		    function displayImages(data) {
+		        // Start putting together the HTML string
+		        var htmlString = "";
+		        // Now start cycling through our array of Flickr photo details
+		        $.each(data.items, function (i, item) {
+		            // I only want the ickle square thumbnails
+		            var sourceSquare = (item.media.m).replace("_m.jpg", "_s.jpg");
+		            // Here's where we piece together the HTML
+		            htmlString += '<li><a href="' + item.link + '" target="_blank">';
+		            htmlString += '<img title="' + item.title + '" src="' + sourceSquare;
+		            htmlString += '" alt="'; htmlString += item.title + '" />';
+		            htmlString += '</a></li>';
+		        });
+		        // Pop our HTML in the #images DIV
+		        $('#images').html(htmlString);
+		        // Close down the JSON function call
+		    }
+	    });
+        </script>
+        <script type='text/javascript' src='http://soworldwide.org/wp-content/themes/soww_theme/library/js/plugins.js?ver=3.4.1'></script>
+        <script type='text/javascript' src='http://soworldwide.org/wp-content/themes/soww_theme/library/js/scripts.js?ver=3.4.1'></script>
+		<script type="text/javascript" src="//use.typekit.net/wxm0zxk.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	</body>
+</html> 

@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BikesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BikesModelStoreContainer">
+          <EntitySet Name="BikeBrand" EntityType="BikesModel.Store.BikeBrand" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BikeCondition" EntityType="BikesModel.Store.BikeCondition" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BikeModel" EntityType="BikesModel.Store.BikeModel" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BikeRegistration" EntityType="BikesModel.Store.BikeRegistration" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderItem" EntityType="BikesModel.Store.OrderItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Orders" EntityType="BikesModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Place" EntityType="BikesModel.Store.Place" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="State" EntityType="BikesModel.Store.State" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsedBike" EntityType="BikesModel.Store.UsedBike" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="BikesModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Bike_Bike" Association="BikesModel.Store.FK_Bike_Bike">
+            <End Role="UsedBike" EntitySet="UsedBike" />
+            <End Role="UsedBike1" EntitySet="UsedBike" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BikeCondition_Bike" Association="BikesModel.Store.FK_BikeCondition_Bike">
+            <End Role="UsedBike" EntitySet="UsedBike" />
+            <End Role="BikeCondition" EntitySet="BikeCondition" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BikeRegistration_BikeRegistration" Association="BikesModel.Store.FK_BikeRegistration_BikeRegistration">
+            <End Role="BikeRegistration" EntitySet="BikeRegistration" />
+            <End Role="BikeRegistration1" EntitySet="BikeRegistration" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_Orders" Association="BikesModel.Store.FK_OrderItem_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderItem" EntitySet="OrderItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Orders" Association="BikesModel.Store.FK_Orders_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Orders1" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Place_State" Association="BikesModel.Store.FK_Place_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="Place" EntitySet="Place" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BikeBrand">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Brand" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModelID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BikeCondition">
+          <Key>
+            <PropertyRef Name="ConditionID" />
+          </Key>
+          <Property Name="ConditionID" Type="int" Nullable="false" />
+          <Property Name="BikeID" Type="int" Nullable="false" />
+          <Property Name="Engine" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Battery" Type="nvarchar" MaxLength="20" />
+          <Property Name="Brakes" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tyres" Type="nvarchar" MaxLength="20" />
+          <Property Name="Suspension" Type="nvarchar" MaxLength="20" />
+          <Property Name="Seat" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="BikeModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MakeID" Type="int" Nullable="false" />
+          <Property Name="ModelName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Version" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="BikeRegistration">
+          <Key>
+            <PropertyRef Name="RegistrationId" />
+          </Key>
+          <Property Name="RegistrationNo" Type="int" Nullable="false" />
+          <Property Name="Place" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NoOfOwners" Type="int" Nullable="false" />
+          <Property Name="Insurance" Type="nvarchar" MaxLength="50" />
+          <Property Name="InsuranceExpDate" Type="date" />
+          <Property Name="BikeId" Type="int" />
+          <Property Name="RegistrationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="OrderItemId" />
+          </Key>
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="OrderItemId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="OrderDescription" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="PlaceID" />
+          </Key>
+          <Property Name="PlaceID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PlaceName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UsedBike">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BrandID" Type="int" Nullable="false" />
+          <Property Name="ModelID" Type="int" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Month" Type="int" />
+          <Property Name="Price" Type="float" />
+          <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RegistrationId" Type="int" Nullable="false" />
+          <Property Name="Kilometers" Type="int" />
+          <Property Name="Fuel" Type="nvarchar" MaxLength="20" />
+          <Property Name="Color" Type="nvarchar" MaxLength="10" />
+          <Property Name="ImageLoc" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserType" Type="int" />
+        </EntityType>
+        <Association Name="FK_Bike_Bike">
+          <End Role="UsedBike" Type="BikesModel.Store.UsedBike" Multiplicity="1" />
+          <End Role="UsedBike1" Type="BikesModel.Store.UsedBike" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UsedBike">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UsedBike1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BikeCondition_Bike">
+          <End Role="UsedBike" Type="BikesModel.Store.UsedBike" Multiplicity="1" />
+          <End Role="BikeCondition" Type="BikesModel.Store.BikeCondition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsedBike">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BikeCondition">
+              <PropertyRef Name="BikeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BikeRegistration_BikeRegistration">
+          <End Role="BikeRegistration" Type="BikesModel.Store.BikeRegistration" Multiplicity="1" />
+          <End Role="BikeRegistration1" Type="BikesModel.Store.BikeRegistration" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BikeRegistration">
+              <PropertyRef Name="RegistrationId" />
+            </Principal>
+            <Dependent Role="BikeRegistration1">
+              <PropertyRef Name="RegistrationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_Orders">
+          <End Role="Orders" Type="BikesModel.Store.Orders" Multiplicity="1" />
+          <End Role="OrderItem" Type="BikesModel.Store.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Orders">
+          <End Role="Orders" Type="BikesModel.Store.Orders" Multiplicity="1" />
+          <End Role="Orders1" Type="BikesModel.Store.Orders" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Orders1">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Place_State">
+          <End Role="State" Type="BikesModel.Store.State" Multiplicity="1" />
+          <End Role="Place" Type="BikesModel.Store.Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BikesModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BikesEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="BikeBrands" EntityType="BikesModel.BikeBrand" />
+          <EntitySet Name="BikeConditions" EntityType="BikesModel.BikeCondition" />
+          <EntitySet Name="BikeModels" EntityType="BikesModel.BikeModel" />
+          <EntitySet Name="BikeRegistrations" EntityType="BikesModel.BikeRegistration" />
+          <EntitySet Name="OrderItems" EntityType="BikesModel.OrderItem" />
+          <EntitySet Name="Orders" EntityType="BikesModel.Order" />
+          <EntitySet Name="UsedBikes" EntityType="BikesModel.UsedBike" />
+          <EntitySet Name="Users" EntityType="BikesModel.User" />
+          <AssociationSet Name="FK_BikeCondition_Bike" Association="BikesModel.FK_BikeCondition_Bike">
+            <End Role="UsedBike" EntitySet="UsedBikes" />
+            <End Role="BikeCondition" EntitySet="BikeConditions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BikeRegistration_BikeRegistration" Association="BikesModel.FK_BikeRegistration_BikeRegistration">
+            <End Role="BikeRegistration" EntitySet="BikeRegistrations" />
+            <End Role="BikeRegistration1" EntitySet="BikeRegistrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItem_Orders" Association="BikesModel.FK_OrderItem_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderItem" EntitySet="OrderItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Orders_Orders" Association="BikesModel.FK_Orders_Orders">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Orders1" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Bike_Bike" Association="BikesModel.FK_Bike_Bike">
+            <End Role="UsedBike" EntitySet="UsedBikes" />
+            <End Role="UsedBike1" EntitySet="UsedBikes" />
+          </AssociationSet>
+          <EntitySet Name="Places" EntityType="BikesModel.Place" />
+          <EntitySet Name="States" EntityType="BikesModel.State" />
+          <AssociationSet Name="FK_Place_State" Association="BikesModel.FK_Place_State">
+            <End Role="State" EntitySet="States" />
+            <End Role="Place" EntitySet="Places" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BikeBrand">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModelID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BikeCondition">
+          <Key>
+            <PropertyRef Name="ConditionID" />
+          </Key>
+          <Property Name="ConditionID" Type="Int32" Nullable="false" />
+          <Property Name="BikeID" Type="Int32" Nullable="false" />
+          <Property Name="Engine" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Battery" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Brakes" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Tyres" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Suspension" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Seat" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="UsedBike" Relationship="BikesModel.FK_BikeCondition_Bike" FromRole="BikeCondition" ToRole="UsedBike" />
+        </EntityType>
+        <EntityType Name="BikeModel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MakeID" Type="Int32" Nullable="false" />
+          <Property Name="ModelName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Version" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BikeRegistration">
+          <Key>
+            <PropertyRef Name="RegistrationId" />
+          </Key>
+          <Property Name="RegistrationNo" Type="Int32" Nullable="false" />
+          <Property Name="Place" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NoOfOwners" Type="Int32" Nullable="false" />
+          <Property Name="Insurance" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InsuranceExpDate" Type="DateTime" Precision="0" />
+          <Property Name="BikeId" Type="Int32" />
+          <Property Name="RegistrationId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BikeRegistration1" Relationship="BikesModel.FK_BikeRegistration_BikeRegistration" FromRole="BikeRegistration" ToRole="BikeRegistration1" />
+          <NavigationProperty Name="BikeRegistration2" Relationship="BikesModel.FK_BikeRegistration_BikeRegistration" FromRole="BikeRegistration1" ToRole="BikeRegistration" />
+        </EntityType>
+        <EntityType Name="OrderItem">
+          <Key>
+            <PropertyRef Name="OrderItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="OrderItemId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Order" Relationship="BikesModel.FK_OrderItem_Orders" FromRole="OrderItem" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="OrderDescription" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="OrderItems" Relationship="BikesModel.FK_OrderItem_Orders" FromRole="Orders" ToRole="OrderItem" />
+          <NavigationProperty Name="Orders1" Relationship="BikesModel.FK_Orders_Orders" FromRole="Orders" ToRole="Orders1" />
+          <NavigationProperty Name="Order1" Relationship="BikesModel.FK_Orders_Orders" FromRole="Orders1" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="UsedBike">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BrandID" Type="Int32" Nullable="false" />
+          <Property Name="ModelID" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Month" Type="Int32" />
+          <Property Name="Price" Type="Double" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RegistrationId" Type="Int32" Nullable="false" />
+          <Property Name="Kilometers" Type="Int32" />
+          <Property Name="Fuel" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Color" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ImageLoc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BikeConditions" Relationship="BikesModel.FK_BikeCondition_Bike" FromRole="UsedBike" ToRole="BikeCondition" />
+          <NavigationProperty Name="UsedBike1" Relationship="BikesModel.FK_Bike_Bike" FromRole="UsedBike" ToRole="UsedBike1" />
+          <NavigationProperty Name="UsedBike2" Relationship="BikesModel.FK_Bike_Bike" FromRole="UsedBike1" ToRole="UsedBike" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="UserType" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_BikeCondition_Bike">
+          <End Role="UsedBike" Type="BikesModel.UsedBike" Multiplicity="1" />
+          <End Role="BikeCondition" Type="BikesModel.BikeCondition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsedBike">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BikeCondition">
+              <PropertyRef Name="BikeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BikeRegistration_BikeRegistration">
+          <End Role="BikeRegistration" Type="BikesModel.BikeRegistration" Multiplicity="1" />
+          <End Role="BikeRegistration1" Type="BikesModel.BikeRegistration" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="BikeRegistration">
+              <PropertyRef Name="RegistrationId" />
+            </Principal>
+            <Dependent Role="BikeRegistration1">
+              <PropertyRef Name="RegistrationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItem_Orders">
+          <End Role="Orders" Type="BikesModel.Order" Multiplicity="1" />
+          <End Role="OrderItem" Type="BikesModel.OrderItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="OrderItem">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Orders_Orders">
+          <End Role="Orders" Type="BikesModel.Order" Multiplicity="1" />
+          <End Role="Orders1" Type="BikesModel.Order" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Orders1">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Bike_Bike">
+          <End Role="UsedBike" Type="BikesModel.UsedBike" Multiplicity="1" />
+          <End Role="UsedBike1" Type="BikesModel.UsedBike" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UsedBike">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UsedBike1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="PlaceID" />
+          </Key>
+          <Property Type="Int32" Name="PlaceID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PlaceName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StateID" Nullable="false" />
+          <NavigationProperty Name="State" Relationship="BikesModel.FK_Place_State" FromRole="Place" ToRole="State" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Type="Int32" Name="StateID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="StateName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Country" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Places" Relationship="BikesModel.FK_Place_State" FromRole="State" ToRole="Place" />
+        </EntityType>
+        <Association Name="FK_Place_State">
+          <End Type="BikesModel.State" Role="State" Multiplicity="1" />
+          <End Type="BikesModel.Place" Role="Place" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="Place">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BikesModelStoreContainer" CdmEntityContainer="BikesEntities">
+          <EntitySetMapping Name="BikeBrands">
+            <EntityTypeMapping TypeName="BikesModel.BikeBrand">
+              <MappingFragment StoreEntitySet="BikeBrand">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BikeConditions">
+            <EntityTypeMapping TypeName="BikesModel.BikeCondition">
+              <MappingFragment StoreEntitySet="BikeCondition">
+                <ScalarProperty Name="ConditionID" ColumnName="ConditionID" />
+                <ScalarProperty Name="BikeID" ColumnName="BikeID" />
+                <ScalarProperty Name="Engine" ColumnName="Engine" />
+                <ScalarProperty Name="Battery" ColumnName="Battery" />
+                <ScalarProperty Name="Brakes" ColumnName="Brakes" />
+                <ScalarProperty Name="Tyres" ColumnName="Tyres" />
+                <ScalarProperty Name="Suspension" ColumnName="Suspension" />
+                <ScalarProperty Name="Seat" ColumnName="Seat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BikeModels">
+            <EntityTypeMapping TypeName="BikesModel.BikeModel">
+              <MappingFragment StoreEntitySet="BikeModel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MakeID" ColumnName="MakeID" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BikeRegistrations">
+            <EntityTypeMapping TypeName="BikesModel.BikeRegistration">
+              <MappingFragment StoreEntitySet="BikeRegistration">
+                <ScalarProperty Name="RegistrationNo" ColumnName="RegistrationNo" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="NoOfOwners" ColumnName="NoOfOwners" />
+                <ScalarProperty Name="Insurance" ColumnName="Insurance" />
+                <ScalarProperty Name="InsuranceExpDate" ColumnName="InsuranceExpDate" />
+                <ScalarProperty Name="BikeId" ColumnName="BikeId" />
+                <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderItems">
+            <EntityTypeMapping TypeName="BikesModel.OrderItem">
+              <MappingFragment StoreEntitySet="OrderItem">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="OrderItemId" ColumnName="OrderItemId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="BikesModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderDescription" ColumnName="OrderDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsedBikes">
+            <EntityTypeMapping TypeName="BikesModel.UsedBike">
+              <MappingFragment StoreEntitySet="UsedBike">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BrandID" ColumnName="BrandID" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="RegistrationId" ColumnName="RegistrationId" />
+                <ScalarProperty Name="Kilometers" ColumnName="Kilometers" />
+                <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="ImageLoc" ColumnName="ImageLoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="BikesModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Places">
+            <EntityTypeMapping TypeName="BikesModel.Place">
+              <MappingFragment StoreEntitySet="Place">
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+                <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="BikesModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

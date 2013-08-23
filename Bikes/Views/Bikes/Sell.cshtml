@@ -1,0 +1,369 @@
+﻿@model Bikes.ViewModels.SellBikeViewModel
+
+@{
+    ViewBag.Title = "Sell";
+}
+
+<!doctype html>  
+
+<!--[if lt IE 7]><html dir="ltr" lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html dir="ltr" lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html dir="ltr" lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--> <html dir="ltr" lang="en-US" class="no-js"><!--<![endif]-->
+	
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- Google Chrome Frame for IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <script src="~/Scripts/jquery-1.8.2.intellisense.js"></script>
+		<!-- mobile meta (hooray!) -->
+		<!-- <meta name="HandheldFriendly" content="True"> -->
+		<!-- <meta name="MobileOptimized" content="320"> -->
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/> -->
+		<!-- icons & favicons (for more: http://themble.com/support/adding-icons-favicons/) -->
+		<link rel="shortcut icon" href="http://soworldwide.org/wp-content/themes/soww_theme/favicon.ico" />
+		<!-- wordpress head functions -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+		<!--[if IE]>
+			<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css">
+			<link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic" rel="stylesheet" type="text/css">
+		<![endif]-->
+		<link rel="alternate" type="application/rss+xml" title="Serving Orphans Worldwide &raquo; />
+        <link rel="alternate" type="application/rss+xml" title="Serving Orphans Worldwide &raquo; Comments Feed" />
+        <link rel="alternate" type="application/rss+xml" title="Serving Orphans Worldwide &raquo; Home Comments Feed" />
+        <link href="~/Content/wpinstagram.css" rel="stylesheet" type="text/css" media="all"/>
+        <link href="~/Content/barebones.css" rel="stylesheet" type="text/css"  media="all"/>
+        <link href="~/Content/jQueryFancybox.css" rel="stylesheet" type="text/css" media="all"/>
+        @*<link rel='stylesheet' id='wpinstagram-css'  href='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/wpinstagram.css?ver=0.3.5' type='text/css' media='all' />
+        <link rel='stylesheet' id='fancybox-css-css'  href='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/fancybox/jquery.fancybox-1.3.4.min.css' type='text/css' media='all' />
+        <link rel='stylesheet' id='bones-stylesheet-css'  href='http://soworldwide.org/wp-content/themes/soww_theme/library/css/style.css?ver=3.4.1' type='text/css' media='all' />*@
+        <style type="text/css">
+                     
+        </style>
+<!--[if lte IE 9]>
+<link rel='stylesheet' id='bones-ie-only-css'  href='' type='text/css' media='all' />
+<![endif]-->
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=1.7.2'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/jquery.easing-1.3.pack.js'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/jquery.cycle.lite-1.5.min.js'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/jquery.fancybox-1.3.4.pack.js'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/plugins/instagram-for-wordpress/js/jquery.mousewheel-3.0.4.pack.js'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-includes/js/comment-reply.js?ver=3.4.1'></script>
+<script type='text/javascript' src='http://soworldwide.org/wp-content/themes/soww_theme/library/js/libs/modernizr.custom.min.js?ver=2.5.3'></script>
+<link rel='canonical' href='http://soworldwide.org/' />
+		<!-- end of wordpress head -->
+		<!-- end analytics -->
+	</head>
+	<body class="home page page-id-4 page-template-default">
+	<div id="fb-root"></div>
+        
+	<script>
+	    $(document).ready(function () {
+	    });
+	    (function (d, s, id) {
+	      var js, fjs = d.getElementsByTagName(s)[0];
+	      if (d.getElementById(id)) return;
+	      js = d.createElement(s); js.id = id;
+	      //js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=206392089402409";
+	      fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+        <style type="text/css">
+            input[type="text"]
+            {
+                width:400px;
+                height:50px;
+                /*background: rgba(255,255,255,0.1);*/
+                background:#fff;
+                border-color: transparent;
+                font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                font-size: 16px;
+                height: auto;
+                margin: 0;
+                outline: 0;
+                padding: 15px;
+                /*width: 50%;*/
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -ms-border-radius: 3px;
+                -o-border-radius: 3px;
+                border-radius: 3px;
+                border: 1px solid #ccc;
+            }
+
+            .row form .row
+            {
+                width:auto;
+                margin:0 -6px;
+                min-width:0;
+            }
+            .row
+            {
+                width: 1000px;
+                max-width: 100%;
+                min-width: 768px;
+                margin: 0 auto;
+            }
+            .row .row{width:auto;max-width:none;min-width:0;margin:0 -15px}
+            .row .one{width:8.33333%}.two,.row .two{width:16.66667%}.three,.row .three{width:25%}.four,.row .four{width:33.33333%}.five,.row .five{width:41.66667%}.six,.row .six{width:50%}.seven,.row .seven{width:58.33333%}.eight,.row .eight{width:66.66667%}.nine,.row .nine{width:75%}.ten,.row .ten{width:83.33333%}.eleven,.row .eleven{width:91.66667%}.twelve,.row .twelve{width:100%}
+            .form-division
+            {
+                margin: 0 30px;
+                padding: 20px 0;
+                border-color:transparent;
+            }
+
+            hr.row
+            {
+                border:#d8e5e8;
+                margin:40px auto;
+            }
+        </style>
+		<div id="container">
+			<header class="header" role="banner">
+				<div id="inner-header" class="wrap clearfix">
+					<!-- to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> -->
+					<!-- <p id="logo" class="h1"><a href="http://soworldwide.org" rel="nofollow">Serving Orphans Worldwide</a></p> -->
+					<!-- if you'd like to use the site description you can un-comment it below -->		
+                    <nav role="navigation">
+						@*<ul id="menu-top-left-nav" class="nav floatleft">*@
+                        <ul id="current" class="nav floatleft">
+                            <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-4 current_page_item menu-item-32">
+                                <a href="/Bikes/Sell">Sell Bikes</a>
+                                <ul>
+                                    <li>
+                                        <a href="">Test</a>
+                                        
+                                    </li>
+                                </ul>
+                            </li>
+                           
+                            <li id="menu-item-14" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14">
+                                <a href="">Buy Bikes</a>
+                            </li>
+                            <li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12">
+                                <a href="">Vote on bikes</a>
+                            </li>
+                        </ul>		
+                        <ul id="menu-top-right-nav" class="nav floatright">
+                            <li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29">
+                            <a href="">Sell Cars</a>
+                            </li>
+                            <li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27">
+                                <a href="">Buy Cars</a>
+                            </li>
+                            <li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28">
+                                <a href="">Vote on Cars</a>
+                            </li>
+                        </ul>						
+					</nav>
+				</div> <!-- end #inner-header -->
+			</header> <!-- end header -->
+			<div id="contact_drawer">
+				<div class="wrap clearfix">
+					<h1 class="bold">We'd love to hear from you.</h1>
+					<p><b></b><br/>
+			
+				</div>
+			</div>
+  		</div>
+              <div id="images">
+              </div>
+        <div id="content">
+        <!--Form Information -->
+         @using (Html.BeginForm()) {
+         @Html.AntiForgeryToken()
+         @Html.ValidationSummary(true)
+
+    <fieldset class="form-division">
+        <legend>Sell Bikes</legend>
+
+        <div class="editor-label .row .twelve">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field .row .twelve">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Area)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Area)
+            @Html.ValidationMessageFor(model => model.Area)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BrandName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BrandName)
+            @Html.ValidationMessageFor(model => model.BrandName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BikeModel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BikeModel)
+            @Html.ValidationMessageFor(model => model.BikeModel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Variant)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Variant)
+            @Html.ValidationMessageFor(model => model.Variant)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.YearMade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.YearMade)
+            @Html.ValidationMessageFor(model => model.YearMade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MonthMade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MonthMade)
+            @Html.ValidationMessageFor(model => model.MonthMade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.KMDriven)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.KMDriven)
+            @Html.ValidationMessageFor(model => model.KMDriven)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Color)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Color)
+            @Html.ValidationMessageFor(model => model.Color)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+             
+}
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+		 <!-- end #content -->
+			<footer class="footer" id="main-footer" role="contentinfo">
+				<div id="inner-footer" class="wrap clearfix">
+					<nav role="navigation">
+    					<ul id="menu-footer-nav" class="nav footer-nav clearfix"><li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="http://soworldwide.org/">Home</a></li>
+                            <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a href="/">About</a>
+                                    <ul>
+                                    <li><a href="">Test</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-38"><a href="/">Feedback</a></li>
+                            <li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-35"><a href="/">Get Involved</a></li>
+                            <li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33"><a href="/">Media</a></li>
+                            <li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34"><a href="/">Contact</a></li>
+                            </ul>	                
+					</nav>
+	                <p class="eightcol first mediumtext"><span class='h2 italic extra-bold serif'>Got Suggestions ? Tell Us</span>
+                         Please tell us how you would like to improve the website.</p>
+					@*<ul class="twocol arrowlist">
+						<li><a href="/"></a>Get Involved</li>
+					</ul>
+					<ul class="twocol last arrowlist">
+						<li><a href="/blog">Blog</a></li>
+						<li><a href="" target="_blank">Twitter</a></li>
+						<li><a href="">Facebook</a></li>
+					</ul>*@
+				</div> <!-- end #inner-footer -->
+				<div id="badge">
+					@*<div class="fb-like" data-href="https://www.facebook.com/soworldwide" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+					*@<a href="http://whiteboard.is/?ref=soww" target="_blank">
+				</div>
+			</footer> <!-- end footer -->
+		</div> <!-- end #container -->
+		<script>
+	    jQuery(document).ready(function($) {
+		    $("ul.wpinstagram").find("a").fancybox({
+			    "transitionIn":			"elastic",
+			    "transitionOut":		"elastic",
+			    "easingIn":				"easeOutBack",
+			    "easingOut":			"easeInBack",
+			    "titlePosition":		"over",
+			    "padding":				0,
+			    "hideOnContentClick":	"true"
+		    });
+		    $.getJSON("http://api.flickr.com/services/feeds/groups_pool.gne?id=991276@N22âŒ©=en-us&amp;format=json&amp;jsoncallback=?", displayImages);
+		    function displayImages(data) {
+		        // Start putting together the HTML string
+		        var htmlString = "";
+		        // Now start cycling through our array of Flickr photo details
+		        $.each(data.items, function (i, item) {
+		            // I only want the ickle square thumbnails
+		            var sourceSquare = (item.media.m).replace("_m.jpg", "_s.jpg");
+		            // Here's where we piece together the HTML
+		            htmlString += '<li><a href="' + item.link + '" target="_blank">';
+		            htmlString += '<img title="' + item.title + '" src="' + sourceSquare;
+		            htmlString += '" alt="'; htmlString += item.title + '" />';
+		            htmlString += '</a></li>';
+		        });
+		        // Pop our HTML in the #images DIV
+		        $('#images').html(htmlString);
+		        // Close down the JSON function call
+		    }
+
+		    $('footer#main-footer').css("margin-top:505px");
+	    });
+        </script>
+        <script type="text/javascript" src="//use.typekit.net/wxm0zxk.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	</body>
+</html> 

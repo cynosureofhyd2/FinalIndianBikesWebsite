@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8390b25967074e55806dc8c9c196097f" Name="Diagram1">
+        <EntityTypeShape EntityType="BikesModel.BikeBrand" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikesModel.BikeCondition" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikesModel.BikeModel" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikesModel.BikeRegistration" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikesModel.OrderItem" Width="1.5" PointX="8" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikesModel.Order" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikesModel.UsedBike" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BikesModel.User" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="BikesModel.FK_BikeCondition_Bike" ManuallyRouted="false" />
+        <AssociationConnector Association="BikesModel.FK_BikeRegistration_BikeRegistration" ManuallyRouted="false" />
+        <AssociationConnector Association="BikesModel.FK_OrderItem_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="BikesModel.FK_Orders_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="BikesModel.FK_Bike_Bike" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BikesModel.Place" Width="1.5" PointX="10.047710464358195" PointY="31.1329591270224" />
+        <EntityTypeShape EntityType="BikesModel.State" Width="1.5" PointX="9.107648216703744" PointY="21.089694256470395" />
+        <AssociationConnector Association="BikesModel.FK_Place_State" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
