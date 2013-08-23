@@ -70,6 +70,10 @@
 	      //js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=206392089402409";
 	      fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
+	    $(document).ready(function () {
+
+	    });
     </script>
 
         <style type="text/css">
@@ -139,9 +143,33 @@
             }
             form
             {
-                width: 800px; 
+                width: 600px; 
                 margin: 0 auto; 
                 background: #ccc;
+            }
+            input[type=submit]
+            {
+                background: -webkit-gradient(linear,left top,left bottom,from(#e34f53),to(#c71f24));
+            }
+            .button primary
+            {
+                color:#fff !important;
+            }
+            .align-right
+            {
+                text-align: right;
+            }
+
+
+            .align-center
+            {
+                text-align: center;
+            }
+
+            .align-left
+            {
+                text-align:left;
+                margin-left:60px;
             }
         </style>
 		<div id="container">
@@ -204,42 +232,42 @@
             <fieldset class="form-division">
                 <legend>Sell Bikes</legend>
 
-                <div class="editor-label .row .twelve">
+                <div class="editor-label .row .twelve align-left">
                     @Html.LabelFor(model => model.Name)
                 </div>
-                <div class="editor-field .row .twelve">
+                <div class="editor-field .row .twelve align-center">
                     @Html.EditorFor(model => model.Name)
                     @Html.ValidationMessageFor(model => model.Name)
                 </div>
-                <div class="editor-field">
+                <div class="editor-field align-center">
                     @Html.EditorFor(model => model.State)
                     @Html.ValidationMessageFor(model => model.Name)
                 </div>
-                <div class="editor-label">
+                <div class="editor-label align-left">
                     @Html.LabelFor(model => model.Email)
                 </div>
-                <div class="editor-field">
+                <div class="editor-field align-center">
                     @Html.EditorFor(model => model.Email)
                     @Html.ValidationMessageFor(model => model.Email)
                 </div>
 
-                <div class="editor-label">
+                <div class="editor-label align-left">
                     @Html.LabelFor(model => model.Place)
                 </div>
-                <div class="editor-field">
+                <div class="editor-field align-center">
                     @Html.EditorFor(model => model.Place)
                     @Html.ValidationMessageFor(model => model.Place)
                 </div>
 
-                <div class="editor-label">
+                <div class="editor-label align-left">
                     @Html.LabelFor(model => model.Phone)
                 </div>
-                <div class="editor-field">
+                <div class="editor-field align-left">
                     @Html.EditorFor(model => model.Phone)
                     @Html.ValidationMessageFor(model => model.Phone)
                 </div>
 
-                <div class="editor-label">
+       @*         <div class="editor-label">
                     @Html.LabelFor(model => model.BrandName)
                 </div>
                 <div class="editor-field">
@@ -293,9 +321,9 @@
                 <div class="editor-field">
                     @Html.EditorFor(model => model.Color)
                     @Html.ValidationMessageFor(model => model.Color)
-                </div>
+                </div>*@
 
-                <p>
+                <p class="align-right">
                     <input type="submit" value="Create" />
                 </p>
             </fieldset>
