@@ -61,18 +61,22 @@
 	<div id="fb-root"></div>
         
 	<script>
-	    $(document).ready(function () {
-	    });
-	    (function (d, s, id) {
-	      var js, fjs = d.getElementsByTagName(s)[0];
-	      if (d.getElementById(id)) return;
-	      js = d.createElement(s); js.id = id;
-	      //js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=206392089402409";
-	      fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+	    //$(document).ready(function () {
+	    //});
+	    //(function (d, s, id) {
+	    //  var js, fjs = d.getElementsByTagName(s)[0];
+	    //  if (d.getElementById(id)) return;
+	    //  js = d.createElement(s); js.id = id;
+	    //  //js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=206392089402409";
+	    //  fjs.parentNode.insertBefore(js, fjs);
+        //}(document, 'script', 'facebook-jssdk'));
 
-	    $(document).ready(function () {
+	    //$(document).ready(function () {
 
+	    //});
+	    $(document).ready(function () {
+	        $('label').css("color", "#e7672e").css("font-size", "2em").css("font-family", "Futura");
+	        $('.footer').css("margin-top", "30px");
 	    });
     </script>
 
@@ -233,9 +237,10 @@
                 <legend>Sell Bikes</legend>
 
                 <div class="editor-label .row .twelve align-left">
-                    @Html.LabelFor(model => model.Name)
+                  
                 </div>
                 <div class="editor-field .row .twelve align-center">
+                      @Html.LabelFor(model => model.Name) &nbsp;
                     @Html.EditorFor(model => model.Name)
                     @Html.ValidationMessageFor(model => model.Name)
                 </div>
@@ -244,25 +249,28 @@
                     @Html.ValidationMessageFor(model => model.Name)
                 </div>
                 <div class="editor-label align-left">
-                    @Html.LabelFor(model => model.Email)
+                
                 </div>
                 <div class="editor-field align-center">
+                        @Html.LabelFor(model => model.Email)&nbsp;&nbsp;
                     @Html.EditorFor(model => model.Email)
                     @Html.ValidationMessageFor(model => model.Email)
                 </div>
 
                 <div class="editor-label align-left">
-                    @Html.LabelFor(model => model.Place)
+                    
                 </div>
                 <div class="editor-field align-center">
+                    @Html.LabelFor(model => model.Place) &nbsp;&nbsp;
                     @Html.EditorFor(model => model.Place)
                     @Html.ValidationMessageFor(model => model.Place)
                 </div>
 
                 <div class="editor-label align-left">
-                    @Html.LabelFor(model => model.Phone)
+                    
                 </div>
                 <div class="editor-field align-left">
+                    @Html.LabelFor(model => model.Phone) &nbsp; &nbsp;
                     @Html.EditorFor(model => model.Phone)
                     @Html.ValidationMessageFor(model => model.Phone)
                 </div>
